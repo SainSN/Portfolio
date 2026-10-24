@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e8">
+  <meta name="description" content="Выберите даты и пожелания для отдыха в SAHIL. Мы подготовим запрос для WhatsApp.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Бронирование — SAHIL</title>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="booking-page">
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header booking-header">
+    <a class="brand" href="index.html" aria-label="SAHIL — на главную">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span class="brand-name">SAHIL<span>HOUSE BY THE CASPIAN</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="index.html#story">Философия</a>
+      <a href="index.html#rooms">Пространство</a>
+      <a href="index.html#rituals">Впечатления</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <a class="header-booking" href="index.html"><span>Вернуться в отель</span><span class="arrow" aria-hidden="true">↗</span></a>
+    <label class="language-control"><span class="visually-hidden">Выбрать язык</span><select class="language-select" aria-label="Выбрать язык"><option value="ru">RU</option><option value="en">EN</option><option value="az">AZ</option></select></label>
+    <details class="mobile-menu">
+      <summary aria-label="Открыть меню"><span></span><span></span></summary>
+      <nav aria-label="Мобильная навигация">
+        <a href="index.html#story">Философия</a>
+        <a href="index.html#rooms">Пространство</a>
+        <a href="index.html#rituals">Впечатления</a>
+        <a href="index.html#contact">Контакты</a>
+        <a class="mobile-book" href="index.html">На главную ↗</a>
+      </nav>
+    </details>
+  </header>
+
+  <main id="main" class="booking-main">
+    <section class="booking-layout" aria-labelledby="booking-title">
+      <div class="booking-story" data-reveal>
+        <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Вернуться к SAHIL</a>
+        <p class="eyebrow"><span class="eyebrow-line"></span> ВАШЕ ВРЕМЯ У КАСПИЯ</p>
+        <h1 id="booking-title">Пусть отдых<br>начнётся <em>здесь.</em></h1>
+        <p class="booking-lead">Оставьте даты и пожелания — мы уточним доступность и ответим лично.</p>
+        <div class="booking-note"><span class="booking-note-mark" aria-hidden="true">S</span><p>Спокойно выберите главное.<br>Остальное обсудим вместе.</p></div>
+        <div class="booking-contact"><span>ЕСТЬ ВОПРОС?</span><a href="https://t.me/Muxtaroov" target="_blank" rel="noopener noreferrer">Напишите нам в Telegram <span aria-hidden="true">↗</span></a></div>
+      </div>
+
+      <div class="booking-card" data-reveal>
+        <div class="booking-card-heading"><span>ЗАПРОС НА ПРОЖИВАНИЕ</span><span>SAHIL / 01</span></div>
+        <form id="booking-form" novalidate>
+          <div class="date-fields">
+            <label class="field"><span>ЗАЕЗД</span><input id="checkin" name="checkin" type="date" required aria-describedby="date-hint"></label>
+            <label class="field"><span>ВЫЕЗД</span><input id="checkout" name="checkout" type="date" required aria-describedby="date-hint"></label>
+          </div>
+          <p class="field-hint" id="date-hint">Выберите даты начала и окончания поездки.</p>
+          <label class="field"><span>ГОСТИ</span><select name="guests" required><option value="1">1 гость</option><option value="2" selected>2 гостя</option><option value="3">3 гостя</option><option value="4">4 гостя</option></select></label>
+          <label class="field"><span>ПРЕДПОЧТЕНИЕ ПО НОМЕРУ</span><select name="room" required><option value="Любой подходящий номер" selected>Помогите выбрать</option><option value="Сьют с террасой">Сьют с террасой</option><option value="Номер с видом">Номер с видом</option><option value="Сьют для двоих">Сьют для двоих</option></select></label>
+          <label class="field"><span>ПОЖЕЛАНИЯ <small>НЕОБЯЗАТЕЛЬНО</small></span><textarea name="note" rows="3" maxlength="240" placeholder="Например, ранний заезд или особый повод"></textarea></label>
+          <button class="button booking-submit" type="submit">Подготовить запрос <span aria-hidden="true">↗</span></button>
+          <p class="privacy-note">Запрос откроется в WhatsApp как черновик. Проверьте сообщение и отправьте его сами.</p>
+          <div class="booking-result" id="booking-result" hidden aria-live="polite">
+            <p>Готово. Осталось проверить сообщение перед отправкой.</p>
+            <a class="button button-light" id="booking-whatsapp" href="https://wa.me/994702727239" target="_blank" rel="noopener noreferrer">Открыть WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer booking-footer">
+    <a class="brand footer-brand" href="index.html" aria-label="SAHIL — на главную"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SAHIL<span>HOUSE BY THE CASPIAN</span></span></a>
+    <p>БАКУ · КАСПИЙСКОЕ МОРЕ</p>
+    <div class="footer-meta"><span>© <span id="year">2026</span> SAHIL HOUSE</span><a href="https://wa.me/994702727239" target="_blank" rel="noopener noreferrer">WHATSAPP +994 70 272 72 39</a><a href="https://t.me/Muxtaroov" target="_blank" rel="noopener noreferrer">TELEGRAM @MUXTAROOV</a><a href="index.html">НА ГЛАВНУЮ ↑</a></div>
+  </footer>
+</body>
+</html>
