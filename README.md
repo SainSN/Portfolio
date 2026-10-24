@@ -1,20 +1,24 @@
-# SAHIL — бутик-отель у Каспия
+# Tahir Mukhtarov portfolio
 
-Лёгкий статический сайт без сборки и внешних JavaScript-библиотек. На главной и странице бронирования есть переключатель русского, английского и азербайджанского языков; выбор сохраняется для следующих переходов. Появления при прокрутке и деликатные эффекты при наведении реализованы CSS и IntersectionObserver, без постоянно работающей фоновой анимации. Для предпросмотра откройте `index.html` в браузере или запустите локальный HTTP-сервер из этой папки, например `python -m http.server 8080`.
+A lightweight, responsive portfolio and password-protected editor. It uses Node.js built-ins only.
 
-## Бронирование
+## Run locally
 
-На `booking.html` посетитель выбирает даты, число гостей, предпочтение по номеру и при желании оставляет примечание. Форма и готовый текст WhatsApp доступны на русском, английском и азербайджанском; данные не отправляются автоматически и не сохраняются на сайте. Посетитель сам открывает WhatsApp, проверяет сообщение и отправляет его.
+Requires Node.js 18 or newer.
 
-## Контакты
+```sh
+npm start
+```
 
-- WhatsApp: `https://wa.me/994702727239`
-- Telegram: `https://t.me/Muxtaroov`
+Open [http://localhost:3000](http://localhost:3000). The admin editor is at `/admin`.
 
-## Фотографии
+The local `.env` file contains the admin login configured for this workspace. It is ignored by Git and never sent to the browser. To deploy, set `ADMIN_USERNAME` and `ADMIN_PASSWORD` as server environment variables, and run `npm start` behind HTTPS. Keep the `data/portfolio.json` file writable so editor changes can be saved.
 
-Реальные фотографии загружаются с Unsplash CDN в подходящем размере. Фотографии бесплатны по лицензии Unsplash; ссылки на лицензию и сам сервис есть внизу страницы. Перед публикацией концепта в качестве сайта действующего отеля замените демонстрационные сведения, сцены и описание услуг на проверенные данные отеля.
+## Pages
 
-## Безопасность и производительность
+- `/` — introduction, selected work, skills, and contact links
+- `/about` — profile, background, and working approach
+- `/admin` — edit profile, links, skills, and projects
 
-Сайт не хранит пользовательские данные и не содержит серверных обработчиков или сторонних JavaScript-пакетов. Форма бронирования обрабатывается в браузере и передаёт только подготовленный посетителем текст WhatsApp. В HTML задана ограничительная CSP, внешние переходы открываются с `noopener noreferrer`, а изображения ниже первого экрана загружаются лениво. Дополнительно включите на веб-сервере HTTPS, `Strict-Transport-Security`, `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `Permissions-Policy` и `frame-ancestors 'none'` в HTTP-заголовке CSP: часть этих настроек нельзя надёжно задать через HTML.
+The public pages are available in English, Russian, Azerbaijani, and Turkish. The language menu remembers each visitor's choice. Profile copy and project descriptions can be edited separately for each language in the admin editor.
+
